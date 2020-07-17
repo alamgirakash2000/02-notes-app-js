@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Notes App</title>
+</head>
+<body>
+     <header class='bg-primary'>
+         <div class="container text-white py-2">
+            <h3>Notes</h3>
+            <p>Take notes and never forget</p>
+         </div>
+     </header>
+
+     <section class='bar py-3'>
+         <div class="container">
+            <input type="text" placeholder="Search notes" id="search" class='pr-5 py-2 mr-5 my-2'>
+            <select id="filter-by" class='pr-5 py-2 mr-5 my-2'>
+                <option value="byEdited">Sort by last edited</option>
+                <option value="byRecent">Sort by recently created</option>
+                <option value="byAlphabetical">Sort by alphabetically</option>
+            </select>
+         </div>
+     </section>
+
+     <section>
+         <div class="container py-5">
+             <div class="row">
+                 <div class="col-md-7">
+                    <div id="note-titles"></div>
+                    <button id='create-button' class="btn btn-info my-4">Create Note</button>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+    <footer class="bg-secondary text-center text-white py-2 align-bottom mt-5 py-md-5">
+        <p>Copyright &copy Alamgir Akash, 2020. All rights reserved.</p>
+    </footer>
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js'></script>
+    <script src='js/note-function.js'></script>
+    <script src="js/notes-app.js"></script>
+</body>
+</html>

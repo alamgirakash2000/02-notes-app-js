@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Note</title>
+</head>
+<body>
+    <header class='bg-primary'>
+        <div class="container text-white py-2">
+           <h3>Notes</h3>
+           <p>Take notes and never forget</p>
+        </div>
+    </header>
+
+    <section class='bar py-1'>
+        <div class="container d-sm-flex justify-content-between">
+            <a href="index.html" class='btn btn-primary m-2'>Home</a>
+            <p id='last-edited'class='m-2'></p>
+        </div>
+    </section>
+
+    <section class='mb-5'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <input type="text" id="note-title" placeholder="Note Title" class='d-block w-100 my-4 py-2'>
+                    <textarea name="" id="note-body" cols="30" rows="8" placeholder="Enter Note text" class='d-block w-100 my-4'></textarea>
+                    <a href="index.html" class='btn btn-success m-2'>Submit</a>
+                    <button id="remove-note" class='btn btn-danger'>Remove</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+ <footer class="bg-secondary text-center text-white py-2 align-bottom mt-5 py-md-5">
+     <p>Copyright &copy Alamgir Akash, 2020. All rights reserved.</p>
+ </footer>
+
+
+
+
+    <script src='js/note-function.js'></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js'></script>
+    <script src="js/notes-edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.bar{
+    background: rgba(214, 222, 224, 0.6);
+}
+button>a{
+    text-decoration: none;
+}
+.btn:hover{
+    background: rgb(78, 73, 73);
+}
+
+.noteEL{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    background: rgba(214, 222, 224, 0.6);
+    padding: 0.6rem 2rem;
+    margin: 1rem 0;
+}
+.noteEL p{
+    margin: 0;
+}
+.noteEL:hover{
+    background: rgb(214, 222, 224);
+    text-decoration: none;
+    color: black;
+}
