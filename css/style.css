@@ -1,5 +1,23 @@
+
+.bg-img{
+    background-image: url(../img/back.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: white;
+}
+.bg-overlay{
+    min-height: 500px;
+    background: black;
+    opacity: .7;
+
+}
+.bg-overlay p,small{
+    color: white;
+}
+
 .bar{
-    background: rgba(214, 222, 224, 0.6);
+    background: rgba(47, 114, 131, 0.6);
 }
 button>a{
     text-decoration: none;
@@ -13,7 +31,7 @@ button>a{
     width: 100%;
     text-decoration: none;
     color: black;
-    background: rgba(214, 222, 224, 0.6);
+    background: rgba(47, 114, 131, 0.8);
     padding: 0.6rem 2rem;
     margin: 1rem 0;
 }
@@ -23,5 +41,8 @@ button>a{
 .noteEL:hover{
     background: rgb(214, 222, 224);
     text-decoration: none;
+    color: black;
+}
+.noteEL:hover p{
     color: black;
 }
