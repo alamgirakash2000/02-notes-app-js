@@ -1,15 +1,14 @@
 'use strict'
 
+// Read existing notes from localStorage
+const getSavedNotes = () => {
+    const notesJSON = localStorage.getItem('notes')
 
-
-// Get saved notes
-function getSavedNotes(){
-    let notesJSON=localStorage.getItem('notes')
-    try{
-        return JSON.parse(notesJSON)
-    }catch(e){
+    try {
+        return notesJSON ? JSON.parse(notesJSON) : []
+    } catch (e) {
         return []
-    }
+    } 
 }
 
 // Save notes to local storage
@@ -48,12 +47,12 @@ function generateDOM(note){
     noteEL.appendChild(title)
     time.classList.add('text-muted','font-italic')
     noteEL.appendChild(time)
-    document.querySelector('#note-titles').appendChild(noteEL)
+    return noteEL
 
 }
 
 // For sorting the notes
-function filterNotes(notes,sortBy){
+function sortNotes(notes,sortBy){
     if(sortBy==='byEdited'){
         return notes.sort(function(a,b){
             if(a.editedAt>b.editedAt){
@@ -87,16 +86,16 @@ function filterNotes(notes,sortBy){
 }
 
 //Get and write the filtered notes
-function renderNotes(notes,filters){
-    notes=filterNotes(notes,filters.sortBy)
-    const filteredNotes = notes.filter((note) =>note.title.toLowerCase().includes(filters.searchTexts.toLowerCase()))
-     document.querySelector('#note-titles').innerHTML=''
-     filteredNotes.forEach(function(note){
-        generateDOM(note)
+const renderNotes = (notes, filters) => {
+    notes = sortNotes(notes, filters.sortBy)
+    const filteredNotes = notes.filter((note) => note.title.toLowerCase().includes(filters.searchText.toLowerCase()))
+
+    document.querySelector('#notes').innerHTML = ''
+
+    filteredNotes.forEach((note) => {
+        const noteEl = generateDOM(note)
+        document.querySelector('#notes').appendChild(noteEl)
     })
-    if(document.querySelector('#note-titles').innerHTML===''){
-        document.querySelector('#note-titles').innerHTML='You have no note to see. Please create one by clicking the button'
-    }
 }
 
 // Generate last edited messege
